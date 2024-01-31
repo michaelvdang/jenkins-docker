@@ -4,7 +4,9 @@ pipeline {
     }
     stages {
       stage('Build') {
-        sh 'python3 --version' 
+        steps {
+          sh 'python3 --version' 
+        }
       }
         // stage('Back-end') {
         //     agent {
