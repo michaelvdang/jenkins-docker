@@ -1,11 +1,16 @@
 pipeline {
-    agent docker-node1
+    agent {
+      node {
+        label 'docker-node1'
+      }
+    }
     // agent {
     //   dockerfile true
     // }
     stages {
       stage('Build') {
         steps {
+          echo $NODE_NAME
           sh 'python3 --version' 
         }
       }
