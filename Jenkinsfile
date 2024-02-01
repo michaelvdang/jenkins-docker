@@ -13,7 +13,7 @@ pipeline {
       stage('Build') {
         steps {
           echo 'hi'
-          // echo $NODE_NAME
+          echo $NODE_NAME
           // sh 'python3 --version' 
         }
       }
