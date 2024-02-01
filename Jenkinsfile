@@ -6,11 +6,19 @@ pipeline {
     //     label 'docker-node1'
     //   }
     // }
-    agent {
-      dockerfile true
-    }
+    agent none
+    // agent {
+    //   dockerfile true
+    // }
     stages {
       stage('Build') {
+        agent {
+          dockerfile {
+            filename 'Dockerfile'
+            dir '.'
+            reuseNode true
+          }
+        }
         steps {
           echo 'hi'
           sh 'python3 --version' 
