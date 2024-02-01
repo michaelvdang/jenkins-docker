@@ -1,19 +1,18 @@
 pipeline {
   //No agent type specified. Must be one of 
   // [any, docker, dockerContainer, dockerfile, label, none] @ line 2, column 5.
-    agent {
-      node {
-        label 'docker-node1'
-      }
-    }
     // agent {
-    //   dockerfile true
+    //   node {
+    //     label 'docker-node1'
+    //   }
     // }
+    agent {
+      dockerfile true
+    }
     stages {
       stage('Build') {
         steps {
           echo 'hi'
-          echo $NODE_NAME
           // sh 'python3 --version' 
         }
       }
