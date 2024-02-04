@@ -25,7 +25,7 @@ pipeline {
             pwd
             cd .
             rm -f Dockerfile
-            // echo "FROM python:alpine3.19 \nWORKDIR /work \nCMD python3 --version" >> Dockerfile
+            echo "FROM python:alpine3.19 \nWORKDIR /work \nCMD python3 --version" >> Dockerfile
             docker ps
             docker ps -a
             docker images
