@@ -25,7 +25,6 @@ pipeline {
 
             docker build -t test-image .
             docker images
-            docker rmi 5f9b4b6e8b07      
             docker run -d --name test-cont test-image
             docker logs test-cont
             docker ps
