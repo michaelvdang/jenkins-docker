@@ -18,23 +18,12 @@ pipeline {
             pwd
             cd .
             rm -f Dockerfile
-            echo "FROM python:alpine3.19 \nWORKDIR /work \nCMD python3 --version" >> Dockerfile
+            // echo "FROM python:alpine3.19 \nWORKDIR /work \nCMD python3 --version" >> Dockerfile
             docker ps
             docker ps -a
             docker images
 
-            docker build -t test-image .
-            docker images
-            docker run -d --name test-cont test-image
-            docker logs test-cont
-            docker ps
-            docker ps -a
-            docker container stop test-cont
-            docker container stop test-cont
-            docker rm test-cont
-            docker ps 
-            docker ps -a
-            docker images
+
           '''
         }
       }
